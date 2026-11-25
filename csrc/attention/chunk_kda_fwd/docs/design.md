@@ -24,15 +24,13 @@ A2/A3 和单 chunk 场景仍使用单次物理 L0。阶段选择仅使用私有 
 
 ## 阶段职责
 
-### KdaGateCumsumVllm
+### Gate cumsum
 
 将 raw/已激活 gate 转为 FP32 chunk-local log2 累计值：
 
 ```text
 gk = cumsum(gate) / ln(2)
 ```
-
-该算子同时保留独立 L2 接口供 GDN2 调用，输入和输出固定为 BNSD/NTD。
 
 ### Prepare
 
