@@ -99,7 +99,7 @@ elif [[ "$SOC_VERSION" =~ ^ascend910b ]]; then
         "chunk_gated_delta_rule_fwd_h_vllm"
         "scatter_nd_update_sk"
         "grouped_matmul_swiglu_quant_weight_nz_tensor_list"
-        "sparse_flash_attention"
+        "sparse_flash_attention_vllm"
         "kv_quant_sparse_flash_attention_vllm"
         "moe_gating_top_k_hash"
         "add_rms_norm_bias"
@@ -141,10 +141,11 @@ elif [[ "$SOC_VERSION" =~ ^ascend910_93 ]]; then
     setup_catlass_dependency
 
     CUSTOM_OPS_ARRAY=(
+        "qsa_union_inputs"
         "chunk_gated_delta_rule_fwd_h_vllm"
         "scatter_nd_update_sk"
         "grouped_matmul_swiglu_quant_weight_nz_tensor_list"
-        "sparse_flash_attention"
+        "sparse_flash_attention_vllm"
         "kv_quant_sparse_flash_attention_vllm"
         "dispatch_ffn_combine"
         "dispatch_ffn_combine_w4_a8"
@@ -190,7 +191,7 @@ elif [[ "$SOC_VERSION" =~ ^ascend950 ]]; then
     setup_catlass_dependency
 
     CUSTOM_OPS_ARRAY=(
-        "sparse_flash_attention"
+        "sparse_flash_attention_vllm"
         "chunk_gated_delta_rule_fwd_h_vllm"
         "scatter_nd_update_sk"
         "add_rms_norm_bias"
@@ -214,6 +215,7 @@ elif [[ "$SOC_VERSION" =~ ^ascend950 ]]; then
         "attn_res_fwd"
         "chunk_fwd_o_vllm"
         "k2q_csr"
+        "qsa_union_inputs"
         "hisparse_resolve_residency"
     )
 
